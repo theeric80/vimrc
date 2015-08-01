@@ -32,9 +32,17 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+set background=dark
 colorscheme solarized
 
 syntax on
+
+set ruler
+set laststatus=2
+set colorcolumn=80
+set wildmenu
+set wildmode=list:longest,full
+set nobackup
 
 set backspace=2
 
@@ -46,19 +54,33 @@ set smarttab
 
 set hlsearch
 set incsearch
-set cindent
+set ignorecase
+set smartcase
+
 set autoindent
-set colorcolumn=80
+set copyindent
+set cindent
 
 set tags=./tags,tags;
 
-set nobackup
+" Disable sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
-
 autocmd GUIEnter * set vb t_vb=
-autocmd vimenter * NERDTree
+
+" Restore cursor to file position in previous editing session
+set viminfo='10,\"100,:20,%,n~/.viminfo
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+" Bash like keys for the command line
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+cnoremap <C-K> <C-U>
+
+" NERDTree
+" autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-nmap <F8> :TagbarToggle<CR>
+" Tagbar
+noremap <F8> :TagbarToggle<CR>
