@@ -59,7 +59,7 @@ set smartcase
 
 set autoindent
 set copyindent
-set cindent
+" set cindent
 
 set tags=./tags,tags;
 
