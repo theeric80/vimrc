@@ -86,3 +86,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Tagbar
 noremap <F8> :TagbarToggle<CR>
+
+" CtrlP
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc|class)$',
+    \ }
