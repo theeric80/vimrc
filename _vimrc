@@ -56,14 +56,17 @@ set smarttab
 
 set hlsearch
 set incsearch
-set ignorecase
+" set ignorecase
 set smartcase
 
 set autoindent
 set copyindent
 " set cindent
 
+" tag
 set tags=./tags,tags;
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Disable sound on errors
 set noerrorbells
