@@ -13,8 +13,8 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 
@@ -86,10 +86,7 @@ cnoremap <C-K> <C-U>
 
 " NERDTree
 " autocmd vimenter * NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" Tagbar
-noremap <F8> :TagbarToggle<CR>
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " CtrlP
 let g:ctrlp_custom_ignore = {
