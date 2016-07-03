@@ -79,10 +79,22 @@ autocmd GUIEnter * set vb t_vb=
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
+"----------------------------------------------------------------------------- 
+" USEFUL SHORTCUTS
+"------------------------------------------------------------------------------
+" set leader to ,
+let mapleader=","
+
 " Bash like keys for the command line
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 cnoremap <C-K> <C-U>
+
+" ,b display the buffer with the given number
+nmap <Leader>b :ls<CR>:b <Space>
+
+" ,p toggles paste mode
+nmap <leader>p :set paste!<BAR>set paste?<CR>
 
 " NERDTree
 " autocmd vimenter * NERDTree
