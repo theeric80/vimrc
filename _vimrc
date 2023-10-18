@@ -11,7 +11,7 @@ syntax on
 
 set ruler
 set laststatus=2
-set colorcolumn=80
+set colorcolumn=120
 set wildmenu
 set wildmode=list:longest,full
 set nobackup
@@ -42,6 +42,17 @@ autocmd GUIEnter * set vb t_vb=
 " Restore cursor to file position in previous editing session
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+if !has('nvim')|set viminfo+=n~/.vim/viminfo|endif
+
+" Jenkinsfile VIM syntax highlighting
+au BufNewFile,BufRead Jenkinsfile setf groovy
+
+" go
+au BufNewFile,BufRead *.go setf go
+
+" yaml
+au FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
 
 "----------------------------------------------------------------------------- 
 " USEFUL SHORTCUTS
